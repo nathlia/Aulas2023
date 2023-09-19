@@ -1,0 +1,244 @@
+PUT /anime
+{
+  "mappings": {
+    "properties": {
+      "titulo": {
+        "type": "text"
+      },
+      "autor": {
+        "type": "keyword"
+      },
+      "ano_publicacao": {
+        "type": "date"
+      },
+      "categoria": {
+        "type": "keyword"
+      },
+      "conteudo": {
+        "type": "text"
+      }
+    }
+  }
+}
+
+GET /meu_indice/_mapping
+
+POST /meu_indice/_doc/1
+{
+  "titulo": "Naruto",
+  "autor": "Masashi Kishimoto",
+  "ano_publicacao": "2002-09-21",
+  "categoria": "Shonen",
+  "conteudo": "Naruto Uzumaki is a young ninja with a sealed demon fox spirit within him. He dreams of becoming the Hokage, the leader of his village."
+}
+
+POST /meu_indice/_doc/2
+{
+  "titulo": "One Piece",
+  "autor": "Eiichiro Oda",
+  "ano_publicacao": "1997-07-22",
+  "categoria": "Shonen",
+  "conteudo": "Monkey D. Luffy and his pirate crew set out on a journey to find the ultimate treasure, One Piece, and become the Pirate King."
+}
+
+POST /meu_indice/_doc/3
+{
+  "titulo": "Attack on Titan",
+  "autor": "Hajime Isayama",
+  "ano_publicacao": "2009-09-09",
+  "categoria": "Shonen",
+  "conteudo": "In a world where humanity resides within enormous walled cities to protect themselves from Titans, colossal humanoid creatures, Eren Yeager vows to eradicate the Titans after they destroy his hometown."
+}
+
+POST /meu_indice/_doc/4
+{
+  "titulo": "Boku no Hero Academia",
+  "autor": "Kohei Horikoshi",
+  "ano_publicacao": "2014-07-07",
+  "categoria": "Shonen",
+  "conteudo": "In a world where superpowers, or 'Quirks,' are common, Izuku Midoriya aims to become a hero despite being born without a Quirk."
+}
+
+POST /meu_indice/_doc/5
+{
+  "titulo": "Dragon Ball",
+  "autor": "Akira Toriyama",
+  "ano_publicacao": "1984-11-20",
+  "categoria": "Shonen",
+  "conteudo": "Follow the adventures of Goku as he seeks the Dragon Balls and becomes a powerful martial artist."
+}
+
+POST /meu_indice/_doc/6
+{
+  "titulo": "Death Note",
+  "autor": "Tsugumi Ohba",
+  "ano_publicacao": "2003-12-02",
+  "categoria": "Shonen",
+  "conteudo": "Light Yagami finds a mysterious notebook that allows him to kill anyone whose name he writes in it. He uses it to rid the world of criminals and becomes known as Kira."
+}
+
+POST /meu_indice/_doc/7
+{
+  "titulo": "Fullmetal Alchemist",
+  "autor": "Hiromu Arakawa",
+  "ano_publicacao": "2001-07-12",
+  "categoria": "Shonen",
+  "conteudo": "Follow the journey of two brothers, Edward and Alphonse Elric, as they search for the Philosopher's Stone to restore their bodies after a failed alchemical experiment."
+}
+
+POST /meu_indice/_doc/8
+{
+  "titulo": "Sword Art Online",
+  "autor": "Reki Kawahara",
+  "ano_publicacao": "2009-04-10",
+  "categoria": "Shonen",
+  "conteudo": "Players of a virtual reality MMORPG become trapped in the game, and Kirito must find a way to clear the game's levels to escape."
+}
+
+POST /meu_indice/_doc/9
+{
+  "titulo": "Demon Slayer: Kimetsu no Yaiba",
+  "autor": "Koyoharu Gotouge",
+  "ano_publicacao": "2016-02-15",
+  "categoria": "Shonen",
+  "conteudo": "Tanjiro Kamado becomes a demon slayer after his family is slaughtered by demons, and he seeks to avenge his sister, who has become a demon."
+}
+
+POST /meu_indice/_doc/10
+{
+  "titulo": "Yahari Ore no Seishun Love Comedy wa Machigatteiru",
+  "autor": "Wataru Watari",
+  "ano_publicacao": "2011-03-18",
+  "categoria": "Seinen",
+  "conteudo": "Hachiman Hikigaya, a high school student with a cynical outlook on life, is forced to join a club that helps others with their problems."
+}
+
+POST /meu_indice/_doc/11
+{
+  "titulo": "Sailor Moon",
+  "autor": "Naoko Takeuchi",
+  "ano_publicacao": "1991-12-28",
+  "categoria": "Shoujo",
+  "conteudo": "Usagi Tsukino transforms into the magical girl Sailor Moon to protect the world from evil forces."
+}
+
+POST /meu_indice/_doc/12
+{
+  "titulo": "Fruits Basket",
+  "autor": "Natsuki Takaya",
+  "ano_publicacao": "1998-07-18",
+  "categoria": "Shoujo",
+  "conteudo": "Tohru Honda discovers that her classmates, the Sohma family, are cursed to turn into animals of the zodiac when hugged by the opposite sex."
+}
+
+POST /meu_indice/_doc/13
+{
+  "titulo": "Ouran High School Host Club",
+  "autor": "Bisco Hatori",
+  "ano_publicacao": "2002-08-05",
+  "categoria": "Shoujo",
+  "conteudo": "Haruhi Fujioka joins a host club at her elite school and disguises herself as a boy, leading to comedic and romantic adventures."
+}
+
+POST /meu_indice/_doc/14
+{
+  "titulo": "Kamisama Kiss",
+  "autor": "Julietta Suzuki",
+  "ano_publicacao": "2008-09-20",
+  "categoria": "Shoujo",
+  "conteudo": "Nanami Momozono becomes a land god and is aided by a fox familiar named Tomoe as she navigates the world of spirits and gods."
+}
+
+POST /meu_indice/_doc/15
+{
+  "titulo": "Yakusoku no Neverland",
+  "autor": "Kaiu Shirai",
+  "ano_publicacao": "2016-08-01",
+  "categoria": "Shonen",
+  "conteudo": "Emma, Norman, and Ray try to escape from a sinister orphanage when they discover the dark secrets behind it."
+}
+
+POST /meu_indice/_doc/16
+{
+  "titulo": "Cardcaptor Sakura",
+  "autor": "CLAMP",
+  "ano_publicacao": "1996-11-22",
+  "categoria": "Shoujo",
+  "conteudo": "Sakura Kinomoto, a young girl, becomes a magical girl tasked with capturing powerful magical cards."
+}
+
+POST /meu_indice/_doc/17
+{
+  "titulo": "Berserk",
+  "autor": "Kentaro Miura",
+  "ano_publicacao": "1989-08-25",
+  "categoria": "Seinen",
+  "conteudo": "Guts, a lone mercenary with a tragic past, seeks vengeance against demonic forces in a dark and violent world."
+}
+
+POST /meu_indice/_doc/18
+{
+  "titulo": "Nana",
+  "autor": "Ai Yazawa",
+  "ano_publicacao": "2000-05-15",
+  "categoria": "Josei",
+  "conteudo": "Two young women named Nana move to Tokyo to pursue their dreams and navigate the complexities of love and friendship."
+}
+
+
+POST /meu_indice/_doc/19
+{
+  "titulo": "Black Clover",
+  "autor": "Yūki Tabata",
+  "ano_publicacao": "2015-02-16",
+  "categoria": "Shounen",
+  "conteudo": "Asta, a boy born without magic in a world of magic, aims to become the Wizard King with sheer determination."
+}
+
+POST /meu_indice/_doc/20
+{
+  "titulo": "Kuroshitsuji (Black Butler)",
+  "autor": "Yana Toboso",
+  "ano_publicacao": "2006-09-16",
+  "categoria": "Shounen",
+  "conteudo": "In Victorian-era England, Ciel Phantomhive, a young aristocrat, forms a contract with his demon butler, Sebastian Michaelis, to seek revenge on those who murdered his parents."
+}
+
+
+GET /meu_indice/_search
+
+
+POST _reindex
+{
+  "source": {
+    "index": "animes"
+  },
+  "dest": {
+    "index": "anime"
+  }
+}
+
+GET /anime/_search
+
+GET /animes/_search
+{     
+	"size":20,   
+	"query":{        
+		"match_all":{}   
+		}
+}
+
+GET /animes/_search
+{   
+   	"query": 
+	{      
+		"bool": 	{       
+			 "must": [ {"match": { "titulo": "Kuroshitsuji"}}]     					}   
+	} 
+}
+
+
+
+
+
+
