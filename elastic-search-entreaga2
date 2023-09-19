@@ -1,9 +1,22 @@
-PUT /anime
+PUT /anime_3
 {
+  "settings": {
+     "number_of_shards": 1,
+     "number_of_replicas": 0,
+     "analysis": {
+       "analyzer": {
+         "my_english_analyzer": {
+            "type": "standard",
+            "stopwords": "_english_"
+         }
+       }
+     }
+   },
   "mappings": {
     "properties": {
       "titulo": {
-        "type": "text"
+        "type": "text",
+        "analyzer": "my_english_analyzer"
       },
       "autor": {
         "type": "keyword"
@@ -15,7 +28,8 @@ PUT /anime
         "type": "keyword"
       },
       "conteudo": {
-        "type": "text"
+        "type": "text", 
+        "analyzer": "my_english_analyzer"
       }
     }
   }
@@ -214,11 +228,12 @@ POST _reindex
     "index": "animes"
   },
   "dest": {
-    "index": "anime"
+    "index": "anime_3"
   }
 }
 
-GET /anime/_search
+GET /anime_3/_search
+GET /anime_3/_settings
 
 GET /animes/_search
 {     
@@ -228,7 +243,7 @@ GET /animes/_search
 		}
 }
 
-GET /animes/_search
+GET /anime/_search
 {   
    	"query": 
 	{      
@@ -237,6 +252,107 @@ GET /animes/_search
 	} 
 }
 
+
+PUT /anime
+{
+   "settings": {
+     "analysis": {
+       "analyzer": {
+         "my_english_analyzer": {
+            "type": "standard",
+            "stopwords": "_english_"
+         }
+       }
+     }
+   }
+} 
+
+#Consulta 1
+POST /anime_3/_search
+{
+  "query": {
+    "match": {
+      "conteudo": {
+        "query": "magical girl",
+        "analyzer": "my_english_analyzer"
+      }
+    }
+  }
+}
+
+#Consulta 2
+POST /anime_3/_search
+{
+  "query": {
+    "match": {
+      "conteudo": {
+        "query": "a group of unlikely heroes embarks on a journey to save humanity.",
+        "analyzer": "my_english_analyzer"
+      }
+    }
+  }
+}
+
+#Consulta 3
+POST /anime_3/_search
+{
+  "query": {
+    "match": {
+      "conteudo": {
+        "query": "fantasy world building",
+        "analyzer": "my_english_analyzer"
+      }
+    }
+  }
+}
+
+#Consulta 4
+POST /anime_3/_search
+{
+  "query": {
+    "match": {
+      "categoria": "Shoujo"
+    }
+  }
+}
+
+
+#Consulta 5
+POST /anime_3/_search
+{
+  "query": {
+    "range": {
+      "ano_publicacao": {
+        "gte": "1997-07-22",
+        "lte": "2016-02-15"
+      }
+    }
+  }
+}
+
+#Consulta 5
+POST /anime_3/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "range": {
+            "ano_publicacao": {
+              "gte": "1997-07-22",
+              "lte": "2016-02-15"
+            }
+          }
+        },
+        {
+          "match": {
+            "conteudo": "MAGIC"
+          }
+        }
+      ]
+    }
+  }
+}
 
 
 
